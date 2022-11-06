@@ -8,13 +8,11 @@ import Home from './pages/Home';
 import OnDay from './pages/OnDay';
 import Signin from './pages/Signin';
 
-
 export function App() {
   return (
     <div>
       <AuthContextProvider>
         <Navbar />
-        <OnDay />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/signin' element={<Signin />} />
@@ -22,6 +20,7 @@ export function App() {
             path='/account'
             element={
               <Protected>
+                <OnDay />
                 <Account />
               </Protected>
             }
